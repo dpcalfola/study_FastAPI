@@ -9,3 +9,5 @@
 * proj_02
   * FastAPI setup manually
   * Listing pip packages on requirements.txt
+  * Connect with localhost DB(Postgres)
+  * Handling super basic restful request 
