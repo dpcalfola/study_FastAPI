@@ -1,6 +1,7 @@
 ### Frequently used commands list
 
 <br>
+<br>
 
 * pip upgrade
 ```shell
@@ -15,4 +16,15 @@ pip install -r requirements.txt
 * run FastAPI server
 ```shell
 python -m uvicorn main:app --reload
+```
+
+<br>
+<br>
+
+#### alembic DB migration
+* Initialize alembic migration
+  * This command makes migrations directory
+
+```shell
+alembic init migrations
 ```
