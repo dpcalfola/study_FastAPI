@@ -16,7 +16,7 @@ books = sqlalchemy.Table(
     "books",
     metadata,
     sqlalchemy.Column("id", sqlalchemy.Integer, primary_key=True),
-    sqlalchemy.Column("Title", sqlalchemy.String),
+    sqlalchemy.Column("title", sqlalchemy.String),
     sqlalchemy.Column("author", sqlalchemy.String),
 )
 
