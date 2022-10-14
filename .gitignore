@@ -133,3 +133,7 @@ dmypy.json
 
 # .DS_Store
 .DS_Store
+
+# another project path
+/proj_02
+/proj_01
