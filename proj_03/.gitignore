@@ -1,3 +1,9 @@
+# .idea
+.idea
+
 # another project path
 ../proj_01
 ../proj_02
+
+# venv directory
+venv_proj_03
