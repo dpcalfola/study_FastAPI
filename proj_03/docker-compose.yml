@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  api_app:
+    build:
+      context: .
+    ports:
+      - "42187:8000"
+    volumes:
+      - ./FastAPI_app:/FastAPI_app
+    command: >
+      sh -c "python main.py"
