@@ -9,6 +9,15 @@
     docker-compose build --no-cache && \
     docker-compose up
     ```
+  
+* docker-compose rebuild (cache)
+    ```shell
+    docker-compose down && \
+    docker-compose build && \
+    docker-compose up
+    ```
+  
+
 * Execute inside container
     ```shell
     docker-compose run --rm api_app sh -c "python main.py"
