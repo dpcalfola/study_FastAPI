@@ -12,10 +12,12 @@
 
 * proj_02 - Study
   * FastAPI setup manually
-  * Listing pip packages on requirements.txt
-  * Connect with localhost DB(Postgres)
-  * Handling super basic restful request
-  * DB migration with alembic
+    * Listing pip packages on requirements.txt
+    * Connect with localhost DB(Postgres)
+  * Handle basic rest request
+  * DB with alembic
+    * How to make and revise migrations
+    * Concept about one-to-many, many-to-many
 
 <br>
 
