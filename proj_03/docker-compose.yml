@@ -9,4 +9,20 @@ services:
     volumes:
       - ./FastAPI_app:/FastAPI_app
     command: >
-      sh -c "python main.py"
+      sh -c "echo ${TEST_VARIABLE} && python main.py"
+    depends_on:
+      - api_db
+
+  api_db:
+    image: postgres:15rc1-alpine3.16
+    ports:
+      - "${PROJ_03_DB_PORT}:5432"
+    volumes:
+      - study-fastapi-03-db-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=${PROJ_03_DB}
+      - POSTGRES_USER=${PROJ_03_USER}
+      - POSTGRES_PASSWORD=${PROJ_03_PASSWORD}
+
+volumes:
+  study-fastapi-03-db-data:
