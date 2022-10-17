@@ -22,4 +22,5 @@
 * proj_03 - <U>FastAPI **docker-compose** project</U>
   * docker-compose
     * services
-      * build: api_app 
+      * build: api_app
+      * DB: postgres
