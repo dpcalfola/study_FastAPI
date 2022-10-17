@@ -19,7 +19,7 @@ books = sqlalchemy.Table(
     sqlalchemy.Column("title", sqlalchemy.String),
     sqlalchemy.Column("author", sqlalchemy.String),
     sqlalchemy.Column("pages", sqlalchemy.Integer),
-    sqlalchemy.Column("reader_id", sqlalchemy.ForeignKey("readers.id"), nullable=False, index=True)
+    sqlalchemy.Column("publishing_company_id", sqlalchemy.ForeignKey("publishing_company.id"), nullable=False)
 )
 
 readers = sqlalchemy.Table(
@@ -28,6 +28,13 @@ readers = sqlalchemy.Table(
     sqlalchemy.Column("id", sqlalchemy.Integer, primary_key=True),
     sqlalchemy.Column("first_name", sqlalchemy.String),
     sqlalchemy.Column("last_name", sqlalchemy.String),
+)
+
+publishing_company = sqlalchemy.Table(
+    "publishing_company",
+    metadata,
+    sqlalchemy.Column("id", sqlalchemy.Integer, primary_key=True),
+    sqlalchemy.Column("company_name", sqlalchemy.String, nullable=False)
 )
 
 # FastAPI from here
@@ -69,4 +76,18 @@ async def create_reader(request: Request):
 @app.get("/readers/")
 async def get_all_readers():
     query = readers.select()
+    return await database.fetch_all(query)
+
+
+@app.post("/publisher/")
+async def create_publisher(request: Request):
+    data = await request.json()
+    query = publishing_company.insert().values(**data)
+    last_record_id = await database.execute(query)
+    return {"id": last_record_id}
+
+
+@app.get("/publisher/")
+async def get_all_publishers():
+    query = publishing_company.select()
     return await database.fetch_all(query)
