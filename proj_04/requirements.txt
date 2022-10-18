@@ -1,0 +1,8 @@
+fastapi>=0.85.0,<0.86.0
+sqlalchemy>=1.4.40,<2.0.0
+databases>=0.6.1,<0.7.0
+asyncpg>=0.26.0,<0.27.0
+psycopg2>=2.9.3,<2.91.0
+python-decouple>=3.6.0,<3.7.0
+uvicorn>=0.18.0,<0.19.0
+alembic>=1.8.1,<1.9.0

@@ -1,2 +1,14 @@
 # venv
 venv_proj_04
+
+#.idea
+.idea
+
+# my personal private secret code directory for test
+secret_codes
+
+
+# temp ignored files
+# alembic.ini
+# -> include sercret data and I don't have skill to hide it yet
+alembic.ini
