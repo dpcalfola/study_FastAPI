@@ -26,3 +26,15 @@
     * services
       * build: api_app
       * DB: postgres
+
+
+<br>
+
+
+
+* proj_04 - Study (2)
+  * Project structure
+    * FastAPI
+    * DB: 
+      * postgres
+      * managed by alembic
