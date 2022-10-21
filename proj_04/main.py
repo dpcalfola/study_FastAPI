@@ -80,3 +80,17 @@ async def startup():
 @app.on_event("shutdown")
 async def shutdown():
     await database.disconnect()
+
+
+@app.get("/clothes/")
+async def get_all_clothes():
+    query = clothes.select()
+    return await database.fetch_all(query)
+
+
+@app.post("/clothes/")
+async def create_clothes(request: Request):
+    data = await request.json()
+    query = clothes.insert().values(**data)
+    last_record_id = await database.execute(query)
+    return {"id": last_record_id}
