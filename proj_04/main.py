@@ -82,6 +82,13 @@ async def shutdown():
     await database.disconnect()
 
 
+@app.get("/")
+async def root():
+    message_1 = {"message": "Hello FastAPI"}
+    message_2 = "Hello FastAPI"
+    return message_2
+
+
 @app.get("/clothes/")
 async def get_all_clothes():
     query = clothes.select()
