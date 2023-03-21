@@ -1,0 +1,16 @@
+show databases
+
+
+use movies
+
+
+
+db.movies.insertOne({
+    "title": "My Movie",
+    "year": 2023,
+    "watched": false
+})
+
+
+
+db.movies.findOne()
