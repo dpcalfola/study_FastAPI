@@ -1,0 +1,6 @@
+# Auto generated directories
+.idea
+.DS_Store
+
+# Personal files
+/personal_use
