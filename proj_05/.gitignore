@@ -4,3 +4,9 @@
 
 # Personal files
 /personal_use
+
+
+# env
+.env
+.env_data
+env.py
