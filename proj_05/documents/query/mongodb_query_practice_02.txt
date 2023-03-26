@@ -1,0 +1,77 @@
+use movies
+
+// Get the oldest document in the collection
+db.movies.findOne()
+
+// Insert
+db.movies.insertOne(
+{
+"title": "The Godfather",
+year: 1972,
+watched: false,
+}
+)
+
+// Insert 2 * 2
+// -> Same document can be inserted multiple times
+db.movies.insertOne({
+    "title": "My Movie",
+    year: 2010,
+    watched: false
+})
+
+// Find title is My Movie
+db.movies.find({title: "My Movie"})
+
+// Question -> year, watched are not string but it works. Why?
+
+
+// Find from ObjectId -> Have to use ObjectId function
+db.movies.find({
+"_id": ObjectId("641af742b8d8e70fcc91759b")
+})
+
+
+
+
+use movies
+
+
+// DELETE A DOCUMENT
+
+// Check the number of documents in the collection
+db.movies.find()
+db.movies.deleteOne(
+{
+    "_id" : ObjectId("641b00e1b3c9453cd768bc82")
+}
+)
+// Check the number of documents in the collection after deleting one
+db.movies.find()
+
+
+
+
+
+// UPDATE A DOCUMENT
+
+// Find the target document
+db.movies.findOne(
+{
+    "_id" : ObjectId("641af9537743ed5c5ab1d5b0")
+}
+)
+// Delete
+db.movies.updateOne(
+{
+    "_id" : ObjectId("641af9537743ed5c5ab1d5b0"),
+},
+{
+    $set: {watched: true}
+})
+// Check the document
+db.movies.findOne(
+{
+    "_id" : ObjectId("641af9537743ed5c5ab1d5b0")
+}
+)

@@ -1,0 +1,89 @@
+
+// Insert multiple movies into the database
+db.movies.insertMany(
+[
+{
+    "title": "My Movie - 2001",
+    "year": 2021,
+    "watched": false,
+},
+{
+    "title": "Movie 1 - 1990",
+    "year": 1990,
+    "watched": false,
+},
+{
+    "title": "Watched Movie",
+    "year": 2021,
+    "watched": true,
+},
+{
+    "title": "Movie 2 - 2005",
+    "year": 2005,
+    "watched": false,
+},
+{
+    "title": "Movie3 - ????",
+    "year": 1999,
+    "watched": false,
+}
+])
+
+// select one ?
+db.movies.findOne()
+
+
+// Find all the movies
+db.movies.find()
+
+// Filtering by title
+db.movies.find({"title": "My Movie"})
+
+// Find movies that have been produced before 2000
+// 'lt' means less than
+db.movies.find(
+{
+    "year": {"$lt":2000}
+}
+)
+
+
+// Find movies that have been produced after 2000
+// 'gt' means: greater than
+db.movies.find(
+{
+"year":{"$gt": 2000}
+}
+)
+
+
+
+// Find all the movies and skip or limit
+db.movies.find()
+db.movies.find().skip(1)
+db.movies.find().skip(2).limit(2)
+
+
+
+// Sort Acending
+db.movies.find().sort({
+"year": 1
+})
+
+// Sort Descending
+db.movies.find().sort({
+"year": -1
+})
+
+
+
+
+// Find all the movies but only select the title and year
+db.movies.find({},{"title":1, "year":1})
+
+// Find all the movies and select all the fields besides the title or (title and year)
+db.movies.find({}, {"title": 0})
+db.movies.find({}, {"title": 0, "year": 0})
+
+// Error
+db.movies.find({}, {"title": 0, "year": 1})
