@@ -9,5 +9,5 @@ def main():
     uvicorn.run(app, host=env.HOST, port=env.PORT)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
