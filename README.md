@@ -38,3 +38,14 @@
     * DB: 
       * postgres
       * managed by alembic
+
+
+
+
+<br>
+
+* proj_05 - Study (3) - <U>**STUDY NOW**</U>
+  * FastAPI
+    * Demo Endpoints
+  * DB
+    * MongoDB - Docker-compose container
