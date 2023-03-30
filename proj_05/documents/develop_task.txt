@@ -57,3 +57,31 @@
         3.3 Make script for test
             /test.sh
                 1. Run flake8
+
+
+
+
+
+4. FastAPI demo
+
+    4.1 Endpoint (prefix="/api/v1/demo")
+        4.1.1 GET "/"
+            Return simple string message as json
+
+        4.1.2 GET "/state-counter"
+            - Test for when initialize the variable inside of function
+                - Every function calls from request, initialize function variable
+                - But global variable that located outside of function saves state until Exit of App
+
+        4.1.3 POST "/hello/name-in-body"
+            - Receive BaseModel class as parameter
+            - Send json in body, response it
+
+        4.1.4 POST "/hello/{name}"
+            - Send data with path
+
+        4.1.5 GET "/hello-query"
+            - Send data with query
+            - Send data Key-Value as params
+            - Result http address:
+                "/hello-query?name=abcdef"
