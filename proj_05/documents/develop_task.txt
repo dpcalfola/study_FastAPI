@@ -85,3 +85,17 @@
             - Send data Key-Value as params
             - Result http address:
                 "/hello-query?name=abcdef"
+
+    4.2 Endpoint 2 (prefix="/api/v1/demo")
+
+        4.2.1 DELETE "/delete"
+            - Just show message now
+
+        4.2.2 DELETE "/delete/{name}"
+            - How to return 404 with json response
+            - How to use
+                - JSONResponse()
+                - jsonable_encoder()
+
+        4.2.3 GET "/error"
+            - Raise 404 HTTP Exception
