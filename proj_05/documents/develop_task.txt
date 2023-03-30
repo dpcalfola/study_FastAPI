@@ -99,3 +99,19 @@
 
         4.2.3 GET "/error"
             - Raise 404 HTTP Exception
+
+
+5. Entities and CRUD abstraction class
+
+    5.1 Create movie entity
+        - Path: /api/entities/movie.py
+        - Definite field and its type
+
+    5.2 Create CRUD abstraction class
+        - Repository(abc.ABC)
+            - create_movie()
+            - get_by_id()
+            - get_by_title()
+            - update_movie()
+            - delete_movie()
+        - RepositoryException(Exception)
