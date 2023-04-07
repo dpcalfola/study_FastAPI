@@ -115,3 +115,18 @@
             - update_movie()
             - delete_movie()
         - RepositoryException(Exception)
+
+
+
+
+
+6. Implement for in-memory handle
+    6.1 Path: /api/repository/movie/movie.py
+    6.2 Implement class MemoryMovieRepository(MovieRepository)
+        6.2.1 Declare dict for storage -> self._storage: dict = {}
+        6.2.2 Implement each abstraction functions
+            - create_movie()
+            - get_by_id()
+            - get_by_title()
+            - update_movie()
+            - delete_movie()

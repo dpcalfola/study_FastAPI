@@ -9,7 +9,7 @@ class RepositoryException(Exception):
 
 
 # CRUD
-class Repository(abc.ABC):
+class MovieRepository(abc.ABC):
     def create_movie(self, movie: Movie):
         """
         1. Create a movie and returns true on success
@@ -23,7 +23,7 @@ class Repository(abc.ABC):
         """
         raise NotImplementedError
 
-    def get_by_title(self, movie_title: str) -> typing.Optional[Movie]:
+    def get_by_title(self, title: str) -> typing.List[Movie]:
         """
         Return a list of movies which share same title
         """
