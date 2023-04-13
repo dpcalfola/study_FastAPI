@@ -1,0 +1,56 @@
+Q1:
+    What is different between
+        1.
+        def get_by_id(self, movie_id: str) -> typing.Optional[Movie]:
+
+        2.
+        def get_by_id(self, movie_id: str) -> Movie:
+
+
+Answer from ChatGPT:
+    The difference between the two method signatures is the return type.
+
+    typing.Optional[Movie] indicates that the method may return a Movie object or None. This return type is useful when it's possible that the movie ID might not exist in the data source, and you want to handle that scenario gracefully by returning None.
+
+    Movie indicates that the method will always return a Movie object. This return type is useful when you are confident that the movie ID exists in the data source, and you don't need to handle the scenario where the ID is not found.
+
+    In summary, the difference between the two method signatures is that the first one allows for the possibility of a None return value, while the second one guarantees that a Movie object will always be returned. The choice between the two depends on the requirements of your specific use case.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Q2 :
+with pytest.raises(RepositoryException):
+    repo.update_movie(movie_id=movie_id, update_parameter=update_parameter)
+
+Answer from ChatGPT:
+
+    In Python, the with statement can be used with the pytest.raises() function to test for exceptions in your code.
+
+    In the example you provided, pytest.raises(RepositoryException) creates a context in which any exception of type RepositoryException that is raised by the code within the with block will be caught and suppressed. If no exception of the specified type is raised, the test will fail.
+
+    Here's an example of how you might use pytest.raises() to test for a specific exception:
+
+    ```python
+    def test_my_function():
+        with pytest.raises(ValueError):
+            my_function(0)
+
+    def my_function(x):
+        if x == 0:
+            raise ValueError('x cannot be zero')
+    ```
+
+    In the example above, we define a test function test_my_function() that tests a function my_function(). We use pytest.raises() to create a context in which any ValueError raised by my_function() will be caught and suppressed. We then call my_function() with a value of 0, which raises a ValueError. Since the test is looking for a ValueError, it will pass.
+
+    Using pytest.raises() can help you write more robust and reliable tests by ensuring that your code behaves correctly in the presence of unexpected errors and exceptions.

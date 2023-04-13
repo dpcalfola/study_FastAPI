@@ -17,3 +17,17 @@
     ```shell
     pip install -r requirements.txt -r requirements.dev.txt -r requirements.test.txt
     ```
+
+
+
+
+### Linting
+  ```shell
+    black .
+  ```
+
+
+### pytest
+```shell
+  pytest .
+```
