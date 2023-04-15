@@ -10,7 +10,7 @@ class RepositoryException(Exception):
 
 # CRUD
 class MovieRepository(abc.ABC):
-    def create_movie(self, movie: Movie):
+    def create_movie(self, movie: Movie) -> typing.Optional[Movie]:
         """
         1. Create a movie and returns true on success
         2. Raise RepositoryException of failure
@@ -29,13 +29,15 @@ class MovieRepository(abc.ABC):
         """
         raise NotImplementedError
 
-    def update_movie(self, movie_id: str, update_parameter: dict):
+    def update_movie(
+        self, movie_id: str, update_parameter: dict
+    ) -> typing.Optional[Movie]:
         """
         Update a movie by its id
         """
         raise NotImplementedError
 
-    def delete_movie(self, movie_id: str):
+    def delete_movie(self, movie_id: str) -> typing.Optional[Movie]:
         """
         1. Delete a movie by its id and return true on success
         2. Raise RepositoryException of failure
