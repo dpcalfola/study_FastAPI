@@ -214,3 +214,24 @@
 
     9.3 All tests pass successfully on local development environment
 
+    9._4. Update MovieRepository abstract method return types
+        -> Checking out "/documents/chore_or_fix_task.txt"
+
+
+
+
+
+10. Asynchronous
+
+    10.1 Path:
+        api/repository/movie/abstractions.py
+        api/repository/movie/movie.py
+        api/repository/movie/test/test_movie.py
+
+    10.2 Add Async and await keyword
+
+    10.3 For async unit test
+        10.3.1 Install 'pytest-asyncio' pip package
+        10.3.2 Add '@pytest.mark.asyncio' decorator at test method
+
+    10.4 All tests pass successfully on local development environment
