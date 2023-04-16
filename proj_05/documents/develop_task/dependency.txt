@@ -1,0 +1,18 @@
+1. requirements.txt
+
+fastapi>=0.94.0, <0.95.0    -> API framework
+uvicorn>=0.20.0, <0.21.0    -> Web Server
+pydantic>=1.9.0, <1.10.0    -> Data validation (use for BaseModel
+starlette>=0.26.0, <0.27.0  -> JSON parser
+motor>=3.1.0, <3.2.0        -> mongoDB asyncio Driver
+
+3
+2. requirements.test.txt
+pytest>=7.3.0, <7.4.0             -> Unit test framework
+pytest-asyncio>=0.20.0, <0.21.0   -> Async unit test framework
+flake8>=5.0.4, < 5.1.0            -> Linting checker
+
+
+
+3. requirements.dev.txt
+black>=23.3.0, <23.4.0      -> Auto lint tool ( $ black . )

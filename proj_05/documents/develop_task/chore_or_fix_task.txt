@@ -1,0 +1,20 @@
+9._4 Update abstract method
+
+    Feat > Update MovieRepository abstract method return types
+
+        * Path:
+            api/repository/movie/abstractions.py
+
+        * Problem:
+            - To pass unit test, I modified the methods in the Implementation class for MovieRepository(abc.ABC),
+                especially their return types and return type hinting
+            - These changes should also be applied to another Implementation class that I am going to create
+            - Therefore, I updated the abstract class based on 'MemoryMovieRepository(MovieRepository)'
+                in the api/repository/movie/movie.py module
+
+        * Updated:
+            - The return types for methods in the MovieRepository class to make them more specific
+            - The `create_movie`, `update_movie`, and `delete_movie` methods now return `typing.Optional[Movie]`
+                to indicate that they may return `None` on failure,
+                as same as the `get_by_id` and `get_by_title` methods
+            - These changes improve the clarity and accuracy of the method signatures
