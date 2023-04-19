@@ -235,3 +235,21 @@
         10.3.2 Add '@pytest.mark.asyncio' decorator at test method
 
     10.4 All tests pass successfully on local development environment
+
+
+
+
+
+
+11. Implement MongoMovieRepository
+    11.1 Path:
+        api/repository/movie/movie.py
+    11.2 Make connection with mongoDB at __init__()
+        11.2.1 Install pip package "motor"
+                - async mongoDB driver
+    11.3 method list
+        - create_movie()
+        - get_by_id()
+        - get_by_title()
+        - update_movie()
+        - delete_movie()
