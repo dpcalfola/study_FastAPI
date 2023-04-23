@@ -253,3 +253,19 @@
         - get_by_title()
         - update_movie()
         - delete_movie()
+
+
+
+_12 Refactoring
+
+    _12.1 Move testcode independent directory
+        Path:
+            api/_test/repository/movie/test_memory.py
+            api/_test/repository/movie/testcases_of_test_memory.py
+
+    _12.2 Separate movie repository for in-memory and mongo
+        Path:
+            in-memory: api/repository/movie/memory.py
+            mongo: api/repository/movie/mongo.py
+
+

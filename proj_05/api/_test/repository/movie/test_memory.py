@@ -1,24 +1,23 @@
 import pytest
-import pytest_asyncio
 
 from api.entities.movie import Movie
-from api.repository.movie.movie import MemoryMovieRepository
+from api.repository.movie.memory import MemoryMovieRepository
 
-from .testcases_of_test_movie import TestCases
-from ..abstractions import RepositoryException
+from .testcases_of_test_memory import TestCases
+from api.repository.movie.abstractions import RepositoryException
 
 
 @pytest.mark.asyncio
 async def test_creat_movie():
     repo = MemoryMovieRepository()
     movie = Movie(
-        movie_id="test",
+        movie_id="_test",
         title="My_Movie",
         description="My description",
         released_year=1990,
     )
     await repo.create_movie(movie)
-    assert await repo.get_by_id("test") is movie
+    assert await repo.get_by_id("_test") is movie
 
 
 @pytest.mark.parametrize(
